@@ -98,7 +98,7 @@ Para isso, usaremos duas Máquinas Virtuais, ambas com a instalação acima do O
 * Máquina Servidor
 
 E, então,
-Instalaremos o `policycoreutils-python-utils` em ambas as máquinas, com o comando:
+Instalaremos o `policycoreutils-python-utils` na maquina servidor, com o comando:
 
 ```
 sudo yum install policycoreutils-python-utils
