@@ -55,9 +55,8 @@ Após isso, instalaremos o `Oracle Linux` apartir da mídia de instalação com 
 Vá na opção 'Root Password' e coloque uma senha para o usuário root.
 
 * Em 'User Settings'
-Vá na opção 'User Creation' e crie os usuários: 
-  * 'comp_admin' com uma senha e com privilégios de administrador.
-
+Vá na opção 'User Creation' e crie um usuário com privilégios, exemplo: 
+  * usuário 'comp_admin' com uma senha e com privilégios de administrador.
 
 Após isso, pode clicar na opção de 'Begin installation' para começar a instalação do oracle linux com as configurações acimas.
 
