@@ -83,17 +83,16 @@ Para isso, usaremos duas Máquinas Virtuais, ambas com a instalação acima do O
 * Máquina Servidor
 
 E, então,
-Instalaremos o `policycoreutils-python-utils` em ambas as máquinas e nos certificaremos que o openssh está instalado, com os comandos:
+Instalaremos o `policycoreutils-python-utils` em ambas as máquinas, com o comando:
 
 ```
 sudo yum install policycoreutils-python-utils
-sudo yum install openssh openssh-server
 ```
 
 e então, antes de começarmos a fazer a relaçao de confiança, 
 faremos algumas configurações de segurança,
 
-Primeiro vamos acessar o arquivo deamon de configuração do ssh
+Primeiro vamos acessar o arquivo de configuração do deamon ssh
 ```
 sudo vi /etc/ssh/sshd_config
 ```
@@ -110,7 +109,7 @@ Agora, para cliente e servidores
 se comunicarem sem problemas através da 
 nova porta, vamos abrir a porta no firewall
 e no SElinux
-de ambas as máquinas.
+da máquina de servidor.
 
 ```
 sudo firewall-cmd --add-port=22005/tcp --permanent
@@ -119,7 +118,7 @@ semanage port -a -t ssh_port_t -p tcp 22005
 ---
 
 E então, para criarmos a relação de confiança, na **Máquina Cliente**
-vamos nos logar com o usuário 'comp_user', e então, usaremos o comando
+vamos nos logar com o usuário desejado, nesse caso, 'comp_user', e então, usaremos o comando
 "ssh-keygen" para gerarmos as chaves e credenciais. ( Por padrão, ele guarda as chaves no diretório oculto '.ssh/' que fica na pasta $HOME do usuário atualmente logado na secção)
 
 ```
@@ -145,10 +144,11 @@ pois efetuamos a relação de confiança
 
 Para fazermos a conexão com a máquina servidor, podemos usar o comando:
 ```
-ssh <usuário_servidor@ip_servidor>
+ssh <usuário_servidor@ip_servidor> -p <porta>
+```
+Exemplo:
+```
+ssh comp_user@192.168.100.38 -p 22005
 ```
 
 ---
-
-
-
