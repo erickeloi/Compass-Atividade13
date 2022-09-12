@@ -71,7 +71,7 @@ sudo yum check-update
 sudo yum update
 ```
 <details>
-  <summary>Como instalar um novo usuário sem poderes administrativos</summary>
+  <summary>Como Adicionar um novo usuário sem poderes administrativos</summary>
   
   De forma adicional, podemos adicionar um usuário sem privilégios administrativos,
 com o comando `useradd`, adicionaremos por exemplo, o usuário 'comp_user'.
