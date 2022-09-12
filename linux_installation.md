@@ -123,13 +123,18 @@ PermitRootLogin no
 Agora, para cliente e servidores
 se comunicarem sem problemas através da 
 nova porta, vamos abrir a porta no firewall
-e no SElinux
-da máquina de servidor.
+e no SElinux da máquina de servidor (Exemplo usando a porta 22005)
 
 ```
 sudo firewall-cmd --add-port=22005/tcp --permanent
 semanage port -a -t ssh_port_t -p tcp 22005
 ```
+E por fim, para terminar a configuração, basta reiniciar o servidor com:
+
+```
+sudo reboot
+```
+
 ---
 
 E então, para criarmos a relação de confiança, na **Máquina Cliente**
@@ -140,8 +145,8 @@ vamos nos logar com o usuário desejado, nesse caso, 'comp_user', e então, usar
 ssh-keygen
 ```
 
-E então, passaremos as informações para a 
-a máquina de servidor com o comando ssh-copy-id, no formato:
+Adiante, passaremos as informações para a 
+a máquina de servidor com o comando `ssh-copy-id`, no formato:
 ```
 ssh-copy-id -i <local_da_chave_pública> <usuário_servidor@ip_servidor>
 ```
@@ -150,8 +155,15 @@ Exemplo ('comp_user' sendo um usuário do servidor e '192.168.1.30' como o ip do
 ```
 ssh-copy-id -i ~/.ssh/id_rsa.pub comp_user@192.168.1.30
 ```
-
-e após entrarmos com a senha do usuário 'comp_user' do servidor, deve aparecer a mensagem dizendo que
+Caso apareça a mensagem:
+```
+The authenticity of host <ip_servidor>:<porta> can't be estabilished
+ECDSA key fingerprint is <fingerprint_key>
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+```
+Digite 'yes' e continue normalmente.
+  
+E, após entrarmos com a senha do usuário 'comp_user' do servidor, deve aparecer a mensagem dizendo que
 a chave foi adicionada ao servidor.
 
 E agora, podemos logar sem precisar de senha,
