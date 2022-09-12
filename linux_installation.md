@@ -30,10 +30,10 @@ Após a instalação do `Oracle VM VirtualBox` e com a ISO do `Oracle Linux` bai
 ## Configuração da Máquina Virtual
 No software `Oracle VM VirtualBox`, pode-se criar uma nova máquina virtual e alocar, no mínimo: 
 * 2Gb de memória ram
-* 12Gb de Armazenamento em VDI (Virtual Disk Image) dinamicamente alocado.
+* 12Gb de Armazenamento.
 
 E, após a criação da VM em questão, selecionando ela no VM VirtualBox e em 'Configurações' -> Rede,
-selecione o adaptador 1 para modo BRIDGE, selecione sua placa de rede.
+selecione o adaptador 1 para modo BRIDGE e selecione sua placa de rede.
 
 ---
 
