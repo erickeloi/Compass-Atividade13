@@ -1,9 +1,5 @@
 ## Release Plan
 
-Para instalação no Virtual Box, utilizar
-a versão do Oracle linux 8 sem
-interface gráfica.
-
 1. [Instalação Oracle Linux no Oracle VM VirtualBox](linux_installation.md)
     - [x] Subir uma VM e Instalar um servidor Oracle Linux na ultima versao disponivel
     - [x] Mudar a VLAN da VM para BRIGDE e fazer os ajustes necessarios
