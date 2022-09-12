@@ -57,7 +57,6 @@ Vá na opção 'Root Password' e coloque uma senha para o usuário root.
 * Em 'User Settings'
 Vá na opção 'User Creation' e crie os usuários: 
   * 'comp_admin' com uma senha e com privilégios de administrador.
-  * 'comp_user' com uma senha 
 
 
 Após isso, pode clicar na opção de 'Begin installation' para começar a instalação do oracle linux com as configurações acimas.
@@ -72,6 +71,22 @@ por meio dos comandos:
 sudo yum check-update
 sudo yum update
 ```
+<details>
+  <summary>Como instalar um novo usuário sem poderes administrativos</summary>
+  
+  De forma adicional, podemos adicionar um usuário sem privilégios administrativos,
+com o comando `useradd`, adicionaremos por exemplo, o usuário 'comp_user'.
+
+```
+useradd comp_user
+```
+e logo após, para setarmos a senha desse usuário, usaremos o comando `passwd`:
+```
+passwd comp_user
+```
+</details>
+
+
 
 E, pronto, o `Oracle Linux` está instalado, configurado e pronto para uso !
 
